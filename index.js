@@ -4,7 +4,9 @@ module.exports = function map(read, fn){
   return function*(end){
     var data;
     while (!data) {
-      data = yield read(end);
+      data = 'function' == typeof read
+        ? yield read(end)
+        : read[i];
       if (end || !data) return;
       data = yield fn(data, i++);
     }

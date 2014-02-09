@@ -63,6 +63,23 @@ describe('map(read, fn)', function(){
       });
     }
   });
+  
+  it('should iterate over arrays', function(done){
+    co(function*(){
+      var read = prefix(['1', '2'], 'data: ');
+      equal('data: 1', yield read());
+      equal('data: 2', yield read());
+      assert(!(yield read()));
+    })(done);
+    
+    function prefix(source, str){
+      var first = true;
+      return map(source, function*(data){
+        yield sleep(10);
+        return str + data;
+      });
+    }
+  });
 });
 
 function twice(){

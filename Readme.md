@@ -25,6 +25,8 @@ while (data = yield read()) console.log(data);
   the return value.
   
   A falsy return yields skips a value and doesn't end the stream.
+  
+  `read` can also be an `Array`.
 
 ## Installation
 
