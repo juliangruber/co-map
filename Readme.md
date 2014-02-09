@@ -3,6 +3,8 @@
 
   Map a [co generator stream](https://github.com/juliangruber/co-stream) over a
   function.
+  
+  [![build status](https://secure.travis-ci.org/juliangruber/co-map.png)](http://travis-ci.org/juliangruber/co-map)
 
 ## Usage
 
