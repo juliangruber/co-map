@@ -8,7 +8,7 @@ co(function*(){
 })();
 
 function prefix(source, str){
-  return map(source, function(data){
+  return map(source, function*(data){
     return str + data;
   });
 }

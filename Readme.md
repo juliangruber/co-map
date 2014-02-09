@@ -9,7 +9,7 @@
 ## Usage
 
 ```js
-var read = map(stream(), function(data, i){
+var read = map(stream(), function*(data, i){
   return i + ': ' + data;
 });
 

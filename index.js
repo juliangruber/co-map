@@ -6,7 +6,7 @@ module.exports = function map(read, fn){
     while (!data) {
       data = yield read(end);
       if (end || !data) return;
-      data = fn(data, i++);
+      data = yield fn(data, i++);
     }
     return data;
   }
